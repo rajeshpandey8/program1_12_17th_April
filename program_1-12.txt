@@ -1,0 +1,267 @@
+'''
+
+#check whether a no is prime or not
+a=int(input("number 1:"))
+#print(a)
+#prime = []
+#not prime =[]
+
+if a>1:
+    for i in range (2,a-1):
+        if a%i==0:
+            print(a,"is not a prime number")
+            break
+    else:
+        print(a,"is a prime number")
+
+
+#check list of prime numbers within a range
+
+#input1 22
+#input2 35
+#output: 23,29,31 (prime no between two ranges)
+
+a=int(input("number 1:"))
+b=int(input("number 2:"))
+
+for c in range (a,b):
+    for i in range (2,c):
+        if (c%i)==0:
+            print(c,"is not a prime number")
+            break
+    else:
+        print(c,"is a prime number")
+
+======================= 
+# need to check
+a=int(input("number 1:"))
+b=int(input("number 2:"))
+prime = []
+not_a_prime =[] 
+for c in range (a,b):
+    for i in range (2,c):
+        if c%i==0:
+            not_a_prime.append(c)
+            #print (c,"is not a prime number")
+            break
+        else:
+            prime.append(c)
+            #print(c,"is a prime number")
+print ("list of not a prime number:",not_a_prime )
+print ("list of prime number:",prime)
+=============================
+
+
+#program3
+#armstrong number: 153=1*1*1+5*5*5+3*3*3
+#check whether a no is armstrong or not
+
+num=int(input("number :"))  #153
+sum=0
+a=num
+while(num>0):
+    dg=num%10  #153%10 #15%10
+    sum=sum+dg*dg*dg  #sum+27 #sum = 125+25 # sum = 1+125+27
+    num=num//10  #15
+if(sum==a):
+    print("armstrong number")
+else:
+    print("not an armstrong number")
+        
+
+
+
+#program4
+
+#list of armstrong numbers between two ranges
+
+a=int(input("number 1:"))
+b=int(input("number 2:"))
+c=[]
+for num in range (a,b+1):
+    a=num
+    sum=0
+    while(num>0):
+        dg=num%10
+        sum=sum+dg*dg*dg
+        num=num//10
+    if(sum==a):
+        c.append(a)
+print(c)
+
+
+
+#program5
+
+#sum of digits 
+
+#ip: 145 ===> 10,even (1+4+5)
+#ip:379 ===> 19,odd (3+7+9)
+n= int(input("enter the number:"))
+sum1=0
+while n>0:        #145
+    rem=n%10      #14
+    sum1=sum1+rem #0+5
+    n=n//10       #14
+
+print("sum of digits:",sum1)
+
+if sum1%2==0:
+    print("sum of digits is even no")
+else:
+    print("sum of digits is odd no")
+
+
+ 
+
+#program6
+
+#product of digits
+
+#ip: 145 ===> 20  (1*4*5)
+#ip:379 ===> 189  (3*7*9)
+#ip: 210 ===> 0 ===> 2
+
+n= int(input("enter the number:"))
+mul=1
+
+while n>0:     #140
+    rem=n%10  #0
+    n=n//10  #14
+    if rem ==0:
+        #rem.replace()
+        continue
+    mul=mul*rem
+print(mul)
+
+
+
+
+
+#program7
+
+#add all odd numbers, ever numbers in a number separately, check whether both are equal or not
+
+#ip: [2,3,4,5,6,7,10,4,10,3,5,6,7,7,8,9,1,2,3,4,5]
+# add all the odd numbers  add all the even numbers 
+#check whether both are equal number
+
+a=[2,3,4,5,6,7,8,9,10,12,14,13,15,18,2,3,4,5,6,7]
+even=[]
+odd=[]
+
+for i in a:
+    if i%2==0:
+        even.append(i)
+    else:
+        odd.append(i)
+print(even,odd)
+x=sum(even)
+y=sum(odd)
+print(x,y)
+
+if x==y:
+    print("sum of numbers is equal")
+else:
+    print("sum of numbers is not equal")
+
+
+
+#program8
+
+#add all positive numbers, negative numbers in a number separately, check whether both are equal or not
+
+#ip: [2,3,-4,5,6,-7,10,4,-10,3,-5,6,-7,7,8,-9,1,2,3,4,-5]
+# add all the +ve numbers  add all the -ve numbers 
+#check whether both are equal number
+
+
+x=[2,3,-4,4,-3,-2,2]
+
+v=[]
+u=[]
+for i in x:
+    if i>=0:
+        v.append(i)
+    else:
+        u.append(i)
+z=sum(v)
+z1=sum(u)
+c=abs(z1)
+if z==c:
+    print("equal")
+else:
+    print("not equal")
+
+
+#program9 (*)
+#fizzbuzz
+
+#ip 2  15
+#op
+#%3 ==> fizz
+#%5 ==> buzz
+#%3 and %5 ==> fizzbuzz
+#na
+#2  na
+#3  fizz
+#4  na
+#5  buzz
+#6  fizz
+#7  na
+#8  na
+#9  fizz
+#10  buzz
+#11  na
+#12  fizz
+#13  na
+#14  na
+#15  fizzbuzz
+
+
+x=int(input("enter the value of x:"))
+y=int(input("enter the value of y:"))
+
+for i in range(x,y):
+    if i %3==0 and i %5==0:
+        print (i,"fizz bizz")
+    elif i % 3==0:
+        print(i,"fizz")
+    elif i %3==0:
+        print (i,"buzz")
+    else:
+        print(i,"na")
+
+
+#program11
+
+#factorial of a number
+
+#6 ==> 6*5*4*3*2*1 ==>720
+
+a=int(input("enter the number:"))
+fact=1
+
+for i in range(1,a+1):
+    fact=fact*i
+print(fact)
+
+
+
+
+
+#program12
+#fibonacci series- is next no will be summ of previous 2 no
+
+#0,1,1,2,3,5,8,13...
+#
+#no of terms in fibo series
+n=int(input("enter the number:"))
+a=0
+b=1
+print(a,b,end=' ')
+for i in range(0,n-2):
+    c=a+b
+    print(c,end=' ')
+    a=b
+    b=c
